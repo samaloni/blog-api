@@ -1,4 +1,4 @@
-package org.sample.employee;
+package org.sample.employee.directory;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

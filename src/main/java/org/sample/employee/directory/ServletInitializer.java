@@ -1,4 +1,4 @@
-package org.sample.employee;
+package org.sample.employee.directory;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
