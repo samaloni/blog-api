@@ -1,19 +1,21 @@
 package com.blog.api.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.blog.api.domain.Post;
 import com.blog.api.service.PostService;
 
-@Controller
+@RestController
 @RequestMapping(path="/posts")
 public class PostController {
 	
@@ -21,13 +23,13 @@ public class PostController {
 	PostService postService;
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public List<Post> list() {
-		List<Post> posts = postService.getAllPosts();
+	public List<Post> list(@RequestParam Map<String,String> params) {
+		List<Post> posts = postService.search(params);
 		return posts;
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public Post save(@RequestBody Post post) {
+	public Post save(@Validated @RequestBody Post post) {
 		return postService.add(post);
 	}
 	
@@ -38,7 +40,7 @@ public class PostController {
 	}
 	
 	@RequestMapping(path="/{id}", method=RequestMethod.PUT) 
-	public Post update(@RequestBody Post post) {
+	public Post update(@Validated @RequestBody Post post) {
 		return postService.update(post);
 	}
 	

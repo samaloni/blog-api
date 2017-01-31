@@ -3,6 +3,7 @@ package com.blog.api.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +22,7 @@ public class UserController {
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public List<User> list() {
-		return userService.list();
+		return userService.search();
 	}
 	
 	@RequestMapping(path="/{id}", method=RequestMethod.GET)
@@ -30,13 +31,12 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/{id}", method=RequestMethod.PUT)
-	public User update(@PathVariable Long id, @RequestBody User updatedUser) {
-		updatedUser.setId(id);
+	public User update(@Validated @RequestBody User updatedUser) {
 		return userService.update(updatedUser);
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public User save(@RequestBody User newUser) {
+	public User save(@Validated @RequestBody User newUser) {
 		return userService.save(newUser);
 	}
 	

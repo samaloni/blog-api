@@ -23,7 +23,7 @@ public class UserService {
 		users = new ArrayList<>();
 	}
 	
-	public List<User> list() {
+	public List<User> search() {
 		return users;
 	}
 	

@@ -1,13 +1,18 @@
 package com.blog.api.domain;
 
+import javax.validation.constraints.NotNull;
+
 public class User {
 	
 	private Long id;
 	
+	@NotNull
 	private String firstName;
 	
+	@NotNull
 	private String lastName;
 	
+	@NotNull
 	private String username;
 
 	public User() {
