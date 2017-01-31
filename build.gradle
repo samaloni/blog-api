@@ -31,7 +31,18 @@ configurations {
 }
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
-	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile 'org.springframework.boot:spring-boot-starter-web'
+	
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	
+	testCompile 'org.springframework.boot:spring-boot-starter-test'
+	testCompile 'org.testng:testng:6.10'
+    testCompile 'org.mockito:mockito-core:2.6.8'
+    testCompile 'org.yaml:snakeyaml:1.17'
+}
+
+test {
+    useTestNG() {
+        suites 'src/test/resources/testng.yaml'
+    }
 }

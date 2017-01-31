@@ -1,0 +1,7 @@
+name: Blog Api Suite
+threadCount: 4
+ 
+tests:
+  - name: PostService
+    classes:
+      - com.blog.api.BlogApiApplicationTests

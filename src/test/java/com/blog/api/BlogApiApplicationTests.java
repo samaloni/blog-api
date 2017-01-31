@@ -1,12 +1,9 @@
 package com.blog.api;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import static org.testng.Assert.*;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+import org.testng.annotations.Test;
+
 public class BlogApiApplicationTests {
 
 	@Test
