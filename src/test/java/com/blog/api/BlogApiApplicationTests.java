@@ -28,6 +28,8 @@ public class BlogApiApplicationTests {
 			assertNotNull(jsonResponse);
 		}catch(UnirestException e){
 			e.printStackTrace();
+		}catch(JsonProcessingException e){
+			e.printStackTrace();
 		}
 		
 	}
