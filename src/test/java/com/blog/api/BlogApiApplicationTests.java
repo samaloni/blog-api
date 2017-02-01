@@ -2,7 +2,6 @@ package com.blog.api;
 
 import static org.testng.Assert.*;
 
-import org.apache.http.entity.ContentType;
 import org.json.JSONObject;
 import org.springframework.http.MediaType;
 import org.testng.annotations.Test;
