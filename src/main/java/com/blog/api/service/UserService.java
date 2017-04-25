@@ -27,6 +27,15 @@ public class UserService {
 		return users;
 	}
 	
+	
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+
 	public User getUser(Long id) {
 		User user = users.stream()
 				.filter(p -> p.getId().equals(id))

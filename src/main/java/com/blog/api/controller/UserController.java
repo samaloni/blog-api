@@ -19,7 +19,7 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@RequestMapping(method=RequestMethod.GET)
+	@RequestMapping( method=RequestMethod.GET)
 	public List<User> list() {
 		return userService.list();
 	}
